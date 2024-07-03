@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="assignment.css">
+</head>
+<body>
+  <div class="contact-form">
+    <h1 class="title2">Contact Us</h1>
+    <form action="assignment.php" method="post" enctype="multipart/form-data" onsubmit="showThankYouMessage(event)">
+      <div class="input-container">
+        <label for="firstname">Enter Name:</label>
+        <input type="text" id="firstname" name="firstname" placeholder="First Name" class="input" required>
+        <input type="text" id="lastname" name="lastname" placeholder="Last Name" class="input" required>
+      </div>
+      <div class="input-container">
+        <label for="calender">DOB:</label>
+        <input type="date" id="calender" name="calender" class="input" required>
+      </div>
+      <div class="input-container">
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male" style="display: inline;">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female" style="display: inline;">Female</label>
+        <input type="radio" id="others" name="gender" value="Others">
+        <label for="others" style="display: inline;">Others</label>
+      </div>
+      <div class="input-container">
+        <label for="select">ID Proof:</label>
+        <select id="select" name="select" class="input" required>
+          <option value="Aadhar">Aadhar Card</option>
+          <option value="License">License</option>
+          <option value="voter">Voter ID</option>
+          <option value="Pan">Pan Card</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="Document">Upload Proof:</label>
+        <input type="file" id="Document" name="Document" class="input2" required>
+      </div>
+      <div class="input-container">
+        <label for="uploadfile">Upload Image:</label>
+        <input type="file" id="uploadfile" name="uploadfile" class="input2" required>
+      </div>
+      <div class="input-container">
+        <input type="submit" value="Submit" class="input">
+        <input type="reset" value="Reset" class="input">
+      </div>
+      <div class="thank-you" id="thankYouMessage">
+        <span>THANKS FOR SUBMITTING</span>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function showThankYouMessage(event) {
+      event.preventDefault();
+      document.getElementById('thankYouMessage').style.display = 'block';
+      setTimeout(() => {
+        event.target.submit();
+      }, 500);
+    }
+  </script>
+</body>
+</html>
